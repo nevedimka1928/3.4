@@ -1,0 +1,16 @@
+CompCount = 0
+keyword = ''
+d = {}
+with open('dataset_3363_3.txt') as inf:
+  for line in inf:
+    line = line.strip().lower().split()
+    #print(line)
+    for key in line:
+      if key in d:
+        d[key] += 1
+      else:
+        d[key] = 1
+      if d[key] > CompCount:
+        CompCount = d[key]
+        keyword = key
+  print(keyword, CompCount)
